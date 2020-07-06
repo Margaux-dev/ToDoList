@@ -14,10 +14,14 @@ function createNewToDo () {
 	
 	// TEXT IN THE NEW ITEM
 	let newToDo = document.createElement("li");
-	newToDo.innerText = toDoInput.value;
-	newToDo.classList.add("todo-item");
-	toDoDiv.appendChild(newToDo);
-	saveList(toDoInput.value);
+	  if (toDoInput.value === "") {
+             alert("Write something please :)")
+          } else {
+             newToDo.innerText = toDoInput.value;
+             newToDo.classList.add("todo-item");
+             toDoDiv.appendChild(newToDo);
+             saveList(toDoInput.value);
+
 	
 	// BUTTON TO MARK THE ITEM AS COMPLETED
 	let completedButton = document.createElement("button");
@@ -47,7 +51,7 @@ function createNewToDo () {
 		
 	// CLEAR THE INPUT VALUE
 	toDoInput.value = "";	
-}
+}}
 
 
 // ADD AN ITEM TO THE TO DO LIST
